@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AlbumsListVC.swift
 //  100AlbumsOfiTunes
 //
 //  Created by Kartikeya Saxena Jain on 4/21/20.
@@ -8,13 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class AlbumListVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .systemRed
     }
-
-
 }
-
