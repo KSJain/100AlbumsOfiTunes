@@ -9,6 +9,7 @@
 import UIKit
 
 class AlbumListVC: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemRed
