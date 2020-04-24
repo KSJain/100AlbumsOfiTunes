@@ -24,7 +24,7 @@ class AlbumListVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         
-        getAlbumData(for: .us)
+        getAlbumData(for: .error)
     }
 }
 
@@ -61,6 +61,7 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    #warning("Implement Here next")
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Album Name: \(albums[indexPath.row].name)")
     }
@@ -76,12 +77,27 @@ extension AlbumListVC {
             
             switch result  {
             case .failure(let error):
-                print("Error: \(error.rawValue)")
+                self.presentGFAlertOnMainThread(title: "OOPS  🚧",
+                                                message: "\(error.rawValue)",
+                                                buttonTitle: "OK")
+                self.updateUI(with: [])
             case .success(let albums):
+                self.updateUI(with: albums)
+
+            }
+        }
+    }
+    
+    func updateUI(with albums: [Album]) {
+        DispatchQueue.main.async { [weak self]  in
+            guard let self = self else { return }
+            
+            if albums.isEmpty {
+                self.showEmptyStateView(with: "Looks like no albums are available at the moment.\n 🔇")
+            } else  {
                 self.albums = albums
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
+                self.view.bringSubviewToFront(self.tableView)
             }
         }
     }

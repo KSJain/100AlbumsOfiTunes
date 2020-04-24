@@ -21,6 +21,11 @@ class NetworkManager{
         
         let endpoint = baseURL + "/\(country.rawValue)" + "/itunes-music/top-albums/all/100/explicit.json"
         
+        //MARK:- HINT, Intentioanlly leaving bad URL to show unhappy path.
+//        Uncomment below to see behaviour, and comment above
+//        let endpoint = baseURL + "/\(country.rawValue)" + "/itunefs-music/top-albums/all/100/explicit.json"
+
+        
         guard let url = URL(string: endpoint) else {
             completion(.failure(.badURL))
             return
