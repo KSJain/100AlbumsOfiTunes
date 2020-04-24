@@ -10,12 +10,14 @@ import UIKit
 
 // MARK: - Country Codes
 enum Country: String {
-    case us = "us"
+    case us     = "us"
+    case uk     = "gb"
+    case india  = "in"
+    case error  = "xx"
 }
 
 // MARK: - Image Name
 enum Images {
-    static let placeholder              = UIImage(named: "")
+    static let placeholder              = UIImage(named: "recordClipart")
     static let emptyStateLogo           = UIImage(named: "")
-    static let ghLogo                   = UIImage(named: "")
 }

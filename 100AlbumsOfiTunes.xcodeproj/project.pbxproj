@@ -20,6 +20,7 @@
 		F68D69242452478C0017283F /* ALSecondaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D69232452478C0017283F /* ALSecondaryTitleLabel.swift */; };
 		F68D692C245249450017283F /* ALAlbumArtImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D692B245249450017283F /* ALAlbumArtImageView.swift */; };
 		F68D693024524A790017283F /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D692F24524A790017283F /* UIImageView + Extension.swift */; };
+		F68D6934245252230017283F /* ALAlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6933245252230017283F /* ALAlbumCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		F68D69232452478C0017283F /* ALSecondaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALSecondaryTitleLabel.swift; sourceTree = "<group>"; };
 		F68D692B245249450017283F /* ALAlbumArtImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALAlbumArtImageView.swift; sourceTree = "<group>"; };
 		F68D692F24524A790017283F /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
+		F68D6933245252230017283F /* ALAlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALAlbumCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,8 @@
 		F68D69202452461A0017283F /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				F68D693524527C980017283F /* Views */,
+				F68D6932245251FA0017283F /* Cells */,
 				F68D6927245248220017283F /* Labels */,
 				F68D693124524D6B0017283F /* Images */,
 			);
@@ -158,6 +162,21 @@
 				F68D692B245249450017283F /* ALAlbumArtImageView.swift */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		F68D6932245251FA0017283F /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F68D6933245252230017283F /* ALAlbumCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F68D693524527C980017283F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,6 +251,7 @@
 			files = (
 				F68D6916244FAC530017283F /* NetworkManager.swift in Sources */,
 				F68D68FE244F780F0017283F /* AppDelegate.swift in Sources */,
+				F68D6934245252230017283F /* ALAlbumCell.swift in Sources */,
 				F68D691A244FAD870017283F /* ALNetworkError.swift in Sources */,
 				F68D6900244F780F0017283F /* SceneDelegate.swift in Sources */,
 				F68D6922245246570017283F /* ALTitleLabel.swift in Sources */,
@@ -386,7 +406,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "KSJain.-00AlbumsOfiTunes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -404,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "KSJain.-00AlbumsOfiTunes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

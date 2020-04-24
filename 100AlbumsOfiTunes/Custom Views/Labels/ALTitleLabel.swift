@@ -32,7 +32,7 @@ class ALTitleLabel: UILabel {
         text                        = text?.uppercased()
         textColor                   = .label
         adjustsFontSizeToFitWidth   = true
-        minimumScaleFactor          = 0.9
+        minimumScaleFactor          = 0.75
         lineBreakMode               = .byWordWrapping
         translatesAutoresizingMaskIntoConstraints = false
     }

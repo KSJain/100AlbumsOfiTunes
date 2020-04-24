@@ -19,8 +19,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window                      = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene         = windowScene
-        window?.rootViewController  = AlbumListVC()
+        window?.rootViewController  = createAlbumListNC()
         window?.makeKeyAndVisible()
+        
+        configureNavigationBar()
+    }
+    
+    func createAlbumListNC() -> UINavigationController {
+        let albumList        = AlbumListVC()
+        albumList.title      = "Top 100 Albums"
+        
+        return UINavigationController(rootViewController: albumList)
+    }
+    
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
