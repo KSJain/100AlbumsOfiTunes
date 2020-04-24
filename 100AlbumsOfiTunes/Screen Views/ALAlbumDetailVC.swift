@@ -28,6 +28,9 @@ class ALAlbumDetailVC: UIViewController {
     }
     
     private func setupViewElements() {
+        let releaseDate                 = album.releaseDate.convertToDate() ?? Date()
+        let releaseDateText             = "Released on : \(releaseDate.convertToMonthAndYear())"
+        
         var genres                      = album.genres
         var genreLableText              = ""
         if genres.count > 0 { genreLableText.append(genres.removeFirst().name)}
@@ -37,8 +40,7 @@ class ALAlbumDetailVC: UIViewController {
                 genreLableText.append("/\(genre)")
             }
         }
-        
-        let releaseDateText             = "Released on : \(album.releaseDate)"
+        genreLableText.append(" • \(releaseDate.convertToYear())")
         
         albumArtView.setImageFor(urlString: album.artworkUrl100)
         albumNameLabel.text             = album.name
@@ -58,15 +60,21 @@ class ALAlbumDetailVC: UIViewController {
         let topBuffer: CGFloat          = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 70 : 120
         let widthMultiplier: CGFloat    = DeviceTypes.isiPhoneSE || DeviceTypes.isiPhone8Zoomed ? 0.6 : 0.83
         
-        [albumArtView,
-         albumNameLabel,
+        view.addSubview(albumArtView)
+        
+        [albumNameLabel,
          artistNameLabel,
          genreLabel,
          releaseDateLabel,
          copyrightInfoLabel,
          storeButton
             ].forEach {
-            view.addSubview($0)
+                view.addSubview($0)
+                NSLayoutConstraint.activate([
+                    $0.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+                    $0.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
+                ])
+                
         }
         
         NSLayoutConstraint.activate([
@@ -76,32 +84,20 @@ class ALAlbumDetailVC: UIViewController {
             albumArtView.heightAnchor.constraint(equalTo: albumArtView.widthAnchor),
             
             albumNameLabel.topAnchor.constraint(equalTo: albumArtView.bottomAnchor, constant: 15),
-            albumNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            albumNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             albumNameLabel.heightAnchor.constraint(equalToConstant: 27),
             
             artistNameLabel.topAnchor.constraint(equalTo: albumNameLabel.bottomAnchor),
-            artistNameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            artistNameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             artistNameLabel.heightAnchor.constraint(equalToConstant: 27),
             
             genreLabel.topAnchor.constraint(equalTo: artistNameLabel.bottomAnchor, constant: 8),
-            genreLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            genreLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             genreLabel.heightAnchor.constraint(equalToConstant: 27),
             
             releaseDateLabel.bottomAnchor.constraint(equalTo: copyrightInfoLabel.topAnchor, constant: -3),
-            releaseDateLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            releaseDateLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             releaseDateLabel.heightAnchor.constraint(equalToConstant: 15),
             
             copyrightInfoLabel.bottomAnchor.constraint(equalTo: storeButton.topAnchor, constant: -12),
-            copyrightInfoLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            copyrightInfoLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: padding),
             copyrightInfoLabel.heightAnchor.constraint(equalToConstant: 15),
             
-            storeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            storeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             storeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
             storeButton.heightAnchor.constraint(equalToConstant: 60)
         ])
@@ -119,7 +115,10 @@ class ALAlbumDetailVC: UIViewController {
         layer.frame      = view.bounds
         layer.startPoint = CGPoint(x: 0,y: 0)
         layer.endPoint   = CGPoint(x: 1,y: 1)
-        layer.colors     = [UIColor.systemGray.cgColor, UIColor.systemGray4.cgColor, UIColor.systemGray6.cgColor].reversed() //TBD
+        layer.colors     = [UIColor.systemGray6.cgColor,
+                            UIColor.systemGray5.cgColor,
+                            UIColor.systemGray2.cgColor,
+                            UIColor.systemGray.cgColor]
         view.layer.addSublayer(layer)
     }
     

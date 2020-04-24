@@ -61,7 +61,6 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    #warning("Implement Here next")
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destVC = ALAlbumDetailVC()
         destVC.album = albums[indexPath.row]
