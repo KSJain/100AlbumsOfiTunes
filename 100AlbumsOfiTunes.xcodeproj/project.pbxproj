@@ -27,10 +27,11 @@
 		F68D693E2452886D0017283F /* ALAlertContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D693D2452886D0017283F /* ALAlertContainerView.swift */; };
 		F68D6940245288C20017283F /* ALBodyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D693F245288C20017283F /* ALBodyLabel.swift */; };
 		F68D6943245288FC0017283F /* ALButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6942245288FC0017283F /* ALButton.swift */; };
+		F68D6945245356210017283F /* ALAlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6944245356210017283F /* ALAlbumDetailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F68D68FA244F780F0017283F /* TopAlbums.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopAlbums.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F68D68FA244F780F0017283F /* Nike Spin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nike Spin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F68D68FD244F780F0017283F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F68D68FF244F780F0017283F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F68D6906244F78130017283F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		F68D693D2452886D0017283F /* ALAlertContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALAlertContainerView.swift; sourceTree = "<group>"; };
 		F68D693F245288C20017283F /* ALBodyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALBodyLabel.swift; sourceTree = "<group>"; };
 		F68D6942245288FC0017283F /* ALButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALButton.swift; sourceTree = "<group>"; };
+		F68D6944245356210017283F /* ALAlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALAlbumDetailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,7 @@
 		F68D68FB244F780F0017283F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F68D68FA244F780F0017283F /* TopAlbums.app */,
+				F68D68FA244F780F0017283F /* Nike Spin.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,7 +91,7 @@
 				F68D69202452461A0017283F /* Custom Views */,
 				F68D6918244FAD5B0017283F /* Utilities */,
 				F68D6917244FAC570017283F /* Manager */,
-				F68D6914244FAAC70017283F /* Screens */,
+				F68D6914244FAAC70017283F /* Screen Views */,
 				F68D6911244F78F30017283F /* Support */,
 				F68D6906244F78130017283F /* Assets.xcassets */,
 				F68D690B244F78130017283F /* Info.plist */,
@@ -107,12 +109,13 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		F68D6914244FAAC70017283F /* Screens */ = {
+		F68D6914244FAAC70017283F /* Screen Views */ = {
 			isa = PBXGroup;
 			children = (
 				F68D6912244FAABF0017283F /* AlbumsListVC.swift */,
+				F68D6944245356210017283F /* ALAlbumDetailVC.swift */,
 			);
-			path = Screens;
+			path = "Screen Views";
 			sourceTree = "<group>";
 		};
 		F68D6917244FAC570017283F /* Manager */ = {
@@ -230,7 +233,7 @@
 			);
 			name = 100AlbumsOfiTunes;
 			productName = 100AlbumsOfiTunes;
-			productReference = F68D68FA244F780F0017283F /* TopAlbums.app */;
+			productReference = F68D68FA244F780F0017283F /* Nike Spin.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -295,6 +298,7 @@
 				F68D693E2452886D0017283F /* ALAlertContainerView.swift in Sources */,
 				F68D693024524A790017283F /* UIImageView + Extension.swift in Sources */,
 				F68D693C245288340017283F /* ALAlertVC.swift in Sources */,
+				F68D6945245356210017283F /* ALAlbumDetailVC.swift in Sources */,
 				F68D691F244FCC1B0017283F /* Constants.swift in Sources */,
 				F68D69392452838B0017283F /* UIViewController + Extension.swift in Sources */,
 				F68D6913244FAABF0017283F /* AlbumsListVC.swift in Sources */,
@@ -444,7 +448,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "KSJain.-00AlbumsOfiTunes";
-				PRODUCT_NAME = TopAlbums;
+				PRODUCT_NAME = "Nike Spin";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -462,7 +466,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "KSJain.-00AlbumsOfiTunes";
-				PRODUCT_NAME = TopAlbums;
+				PRODUCT_NAME = "Nike Spin";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

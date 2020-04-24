@@ -63,7 +63,11 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
     
     #warning("Implement Here next")
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Album Name: \(albums[indexPath.row].name)")
+        let destVC = ALAlbumDetailVC()
+        destVC.album = albums[indexPath.row]
+        let navController = UINavigationController(rootViewController: destVC)
+        present(navController, animated: true, completion: nil)
+        
     }
 }
 
