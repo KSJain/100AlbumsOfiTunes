@@ -10,6 +10,7 @@ import UIKit
 
 // MARK:- Empty State Extension
 fileprivate var containerView: UIView!
+fileprivate var emptyView: ALEmptyStateView?
 
 extension UIViewController {
     
@@ -43,9 +44,13 @@ extension UIViewController {
     }
     
     func showEmptyStateView(with message: String) {
-        let emptyStateView = ALEmptyStateView(message: message)
-        emptyStateView.frame = view.bounds
-        view.addSubview(emptyStateView)
+        emptyView = ALEmptyStateView(message: message)
+        emptyView?.frame = view.bounds
+        view.addSubview(emptyView!)
+    }
+    
+    func hideEmptyStateView(){
+        emptyView?.removeFromSuperview()
     }
 }
 

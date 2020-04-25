@@ -8,8 +8,8 @@
 
 import UIKit
 
-fileprivate typealias AlbumDataSource = UITableViewDiffableDataSource<Section, AlbumViewModel>
-fileprivate typealias AlbumSnapshot = NSDiffableDataSourceSnapshot<Section, AlbumViewModel>
+fileprivate typealias AlbumDataSource   = UITableViewDiffableDataSource<Section, AlbumViewModel>
+fileprivate typealias AlbumSnapshot     = NSDiffableDataSourceSnapshot<Section, AlbumViewModel>
 
 fileprivate enum Section {
     case main
@@ -17,8 +17,9 @@ fileprivate enum Section {
 
 class AlbumListVC: UIViewController {
     
-    private var tableView       = UITableView()
-    private var albumViewModels = [AlbumViewModel]()
+    private var tableView               = UITableView()
+    private var albumViewModels         = [AlbumViewModel]()
+    private var filteredViewModels      = [AlbumViewModel]()
     
     private var diffableDataSource: AlbumDataSource!
     
@@ -28,6 +29,7 @@ class AlbumListVC: UIViewController {
         configureViewController()
         configureTableView()
         configureDataSource()
+        configureSearchController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,7 +44,7 @@ class AlbumListVC: UIViewController {
 extension AlbumListVC {
     
     private func configureViewController()  {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor            = .systemBackground
         navigationController?.navigationBar.prefersLargeTitles = true
     }
 }
@@ -60,7 +62,7 @@ extension AlbumListVC {
     }
     
     private func createSnapshot(for viewModels: [AlbumViewModel]) {
-        var snapshot = AlbumSnapshot()
+        var snapshot                    = AlbumSnapshot()
         snapshot.appendSections([.main])
         snapshot.appendItems(viewModels)
         diffableDataSource.apply(snapshot, animatingDifferences: true)
@@ -73,9 +75,9 @@ extension AlbumListVC: UITableViewDelegate {
     private func configureTableView(){
         view.addSubview(tableView)
         
-        tableView.frame         = view.bounds
-        tableView.rowHeight     = 120
-        tableView.delegate      = self
+        tableView.frame                 = view.bounds
+        tableView.rowHeight             = 120
+        tableView.delegate              = self
         
         tableView.register(ALAlbumCell.self, forCellReuseIdentifier: ALAlbumCell.reuseID)
     }
@@ -119,10 +121,33 @@ extension AlbumListVC {
             if albumViewModels.isEmpty {
                 self.showEmptyStateView(with: "Looks like no albums are available at the moment.\n 🔇")
             } else  {
-                self.albumViewModels = albumViewModels
+                self.albumViewModels            = albumViewModels
                 self.createSnapshot(for: self.albumViewModels)
                 self.view.bringSubviewToFront(self.tableView)
             }
         }
+    }
+}
+
+//MARK:- Search Functionality
+extension AlbumListVC: UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let filter    = searchController.searchBar.text, !filter.isEmpty else { return }
+        filteredViewModels  = albumViewModels.filter{ $0.name.lowercased().contains(filter.lowercased()) }
+        
+        self.createSnapshot(for: self.filteredViewModels)
+    }
+    
+    private func configureSearchController() {
+        let searchController                    = UISearchController()
+        searchController.searchResultsUpdater   = self
+        searchController.searchBar.delegate     = self
+        searchController.searchBar.placeholder  = "Search For Album Here"
+        searchController.obscuresBackgroundDuringPresentation = false
+        navigationItem.searchController         = searchController
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        createSnapshot(for: albumViewModels)
     }
 }
