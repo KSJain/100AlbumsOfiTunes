@@ -32,7 +32,8 @@ struct AlbumViewModel {
         // Genre
         var genres          = album.genres
         var genreLableText  = ""
-        if genres.count > 0 { genreLableText.append(genres.removeFirst().name)}
+        if genres.count == 0 { genreLableText = "No Genre"}
+        if genres.count >= 1 { genreLableText.append(genres.removeFirst().name)}
         while genres.count > 0 {
             let genre       = genres.removeFirst().name
             if genre != "Music" {
