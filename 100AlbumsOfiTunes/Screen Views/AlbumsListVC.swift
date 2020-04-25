@@ -8,16 +8,26 @@
 
 import UIKit
 
+fileprivate typealias AlbumDataSource = UITableViewDiffableDataSource<Section, AlbumViewModel>
+fileprivate typealias AlbumSnapshot = NSDiffableDataSourceSnapshot<Section, AlbumViewModel>
+
+fileprivate enum Section {
+    case main
+}
+
 class AlbumListVC: UIViewController {
     
-    var tableView       = UITableView()
-    var albumViewModels = [AlbumViewModel]()
+    private var tableView       = UITableView()
+    private var albumViewModels = [AlbumViewModel]()
+    
+    private var diffableDataSource: AlbumDataSource!
     
     override func viewDidLoad() {
         super.viewDidLoad()
                 
         configureViewController()
         configureTableView()
+        configureDataSource()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,8 +47,28 @@ extension AlbumListVC {
     }
 }
 
-// MARK:- Table View Configuration
-extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
+// MARK:- Diffable Data Source
+extension AlbumListVC {
+    private func configureDataSource() {
+        diffableDataSource = AlbumDataSource(tableView: tableView,
+                                            cellProvider: { (tableView, indexPath, viewModel) -> UITableViewCell? in
+                                                let cell = tableView.dequeueReusableCell(withIdentifier: ALAlbumCell.reuseID,
+                                                                                         for: indexPath) as! ALAlbumCell
+                                                cell.setCell(with: viewModel)
+                                                return cell
+        })
+    }
+    
+    private func createSnapshot(for viewModels: [AlbumViewModel]) {
+        var snapshot = AlbumSnapshot()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(viewModels)
+        diffableDataSource.apply(snapshot, animatingDifferences: true)
+    }
+}
+
+// MARK:- Table View
+extension AlbumListVC: UITableViewDelegate {
     
     private func configureTableView(){
         view.addSubview(tableView)
@@ -46,32 +76,22 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
         tableView.frame         = view.bounds
         tableView.rowHeight     = 120
         tableView.delegate      = self
-        tableView.dataSource    = self
         
         tableView.register(ALAlbumCell.self, forCellReuseIdentifier: ALAlbumCell.reuseID)
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albumViewModels.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ALAlbumCell.reuseID, for: indexPath) as! ALAlbumCell
-        cell.setCell(with: albumViewModels[indexPath.row])
-        return cell
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let viewModel = diffableDataSource.itemIdentifier(for: indexPath) else { return }
+        
         let destVC = ALAlbumDetailVC()
-        destVC.albumViewModel = albumViewModels[indexPath.row]
+        destVC.albumViewModel = viewModel
         let navController = UINavigationController(rootViewController: destVC)
         present(navController, animated: true, completion: nil)
         
     }
 }
 
-
-// MARK:- Album Data
+// MARK:- Data Service Layer
 extension AlbumListVC {
     
     private func getAlbumData(for country: Country) {
@@ -100,7 +120,7 @@ extension AlbumListVC {
                 self.showEmptyStateView(with: "Looks like no albums are available at the moment.\n 🔇")
             } else  {
                 self.albumViewModels = albumViewModels
-                self.tableView.reloadData()
+                self.createSnapshot(for: self.albumViewModels)
                 self.view.bringSubviewToFront(self.tableView)
             }
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AlbumViewModel {
+struct AlbumViewModel: Hashable {
     let url: String
     let name: String
     let copyright: String
