@@ -30,6 +30,7 @@
 		F68D6945245356210017283F /* ALAlbumDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6944245356210017283F /* ALAlbumDetailVC.swift */; };
 		F68D69472453807C0017283F /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D69462453807C0017283F /* Date + Extension.swift */; };
 		F68D6949245381960017283F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6948245381960017283F /* String+Extension.swift */; };
+		F68D694C2454ACCF0017283F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D694B2454ACCF0017283F /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		F68D6944245356210017283F /* ALAlbumDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ALAlbumDetailVC.swift; sourceTree = "<group>"; };
 		F68D69462453807C0017283F /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		F68D6948245381960017283F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		F68D694B2454ACCF0017283F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			children = (
 				F68D692E24524A580017283F /* Extensions */,
 				F68D691B244FADB80017283F /* Model */,
+				F68D694A2454ACA30017283F /* View Model */,
 				F68D69202452461A0017283F /* Custom Views */,
 				F68D6918244FAD5B0017283F /* Utilities */,
 				F68D6917244FAC570017283F /* Manager */,
@@ -222,6 +225,14 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
+		F68D694A2454ACA30017283F /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				F68D694B2454ACCF0017283F /* ViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -306,6 +317,7 @@
 				F68D693E2452886D0017283F /* ALAlertContainerView.swift in Sources */,
 				F68D693024524A790017283F /* UIImageView + Extension.swift in Sources */,
 				F68D693C245288340017283F /* ALAlertVC.swift in Sources */,
+				F68D694C2454ACCF0017283F /* ViewModel.swift in Sources */,
 				F68D6945245356210017283F /* ALAlbumDetailVC.swift in Sources */,
 				F68D691F244FCC1B0017283F /* Constants.swift in Sources */,
 				F68D69392452838B0017283F /* UIViewController + Extension.swift in Sources */,

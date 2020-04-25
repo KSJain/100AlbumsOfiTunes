@@ -51,7 +51,7 @@ class NetworkManager{
             let decoder = JSONDecoder()
             
             do {
-                let rss = try decoder.decode(Welcome.self, from: jsonData)
+                let rss = try decoder.decode(RSS.self, from: jsonData)
                 let albums  = rss.feed.results
                 completion(.success(albums))
                 

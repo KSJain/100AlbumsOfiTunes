@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome: Codable {
+struct RSS: Codable {
     let feed: Feed
 }
 

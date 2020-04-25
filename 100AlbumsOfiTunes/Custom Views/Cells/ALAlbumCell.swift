@@ -24,10 +24,10 @@ class ALAlbumCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setCell(with album: Album) {
-        albumArt.setImageFor(urlString: album.artworkUrl100)
-        albumName.text      = album.name
-        artistName.text     = album.artistName
+    func setCell(with viewModel: AlbumViewModel) {
+        albumArt.setImageFor(urlString: viewModel.artworkUrl)
+        albumName.text      = viewModel.name
+        artistName.text     = viewModel.artistName
     }
     
     private func configure() {

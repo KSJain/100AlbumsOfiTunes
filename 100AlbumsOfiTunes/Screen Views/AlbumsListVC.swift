@@ -11,7 +11,7 @@ import UIKit
 class AlbumListVC: UIViewController {
     
     var tableView       = UITableView()
-    var albums: [Album] = []
+    var albumViewModels = [AlbumViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,18 +52,18 @@ extension AlbumListVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return albums.count
+        return albumViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ALAlbumCell.reuseID, for: indexPath) as! ALAlbumCell
-        cell.setCell(with: albums[indexPath.row])
+        cell.setCell(with: albumViewModels[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let destVC = ALAlbumDetailVC()
-        destVC.album = albums[indexPath.row]
+        destVC.albumViewModel = albumViewModels[indexPath.row]
         let navController = UINavigationController(rootViewController: destVC)
         present(navController, animated: true, completion: nil)
         
@@ -85,20 +85,21 @@ extension AlbumListVC {
                                                 buttonTitle: "OK")
                 self.updateUI(with: [])
             case .success(let albums):
-                self.updateUI(with: albums)
+                let viewModels = albums.map{ AlbumViewModel(album: $0) }
+                self.updateUI(with: viewModels)
 
             }
         }
     }
     
-    func updateUI(with albums: [Album]) {
+    func updateUI(with albumViewModels: [AlbumViewModel]) {
         DispatchQueue.main.async { [weak self]  in
             guard let self = self else { return }
             
-            if albums.isEmpty {
+            if albumViewModels.isEmpty {
                 self.showEmptyStateView(with: "Looks like no albums are available at the moment.\n 🔇")
             } else  {
-                self.albums = albums
+                self.albumViewModels = albumViewModels
                 self.tableView.reloadData()
                 self.view.bringSubviewToFront(self.tableView)
             }
