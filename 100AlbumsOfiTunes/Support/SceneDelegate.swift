@@ -26,8 +26,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createAlbumListNC() -> UINavigationController {
-        let albumList        = AlbumListVC()
-        albumList.title      = "Top 100 Albums"
+        let albumList               = AlbumListVC()
+        albumList.title             = "Top 100 Albums"
         
         return UINavigationController(rootViewController: albumList)
     }

@@ -10,10 +10,10 @@ import UIKit
 
 class ALAlertVC: UIViewController {
     
-    let containerView   = ALAlertContainerView()
-    let titleLabel      = ALTitleLabel(textAlignment: .center, fontSize: 20)
-    let messageLabel    = ALBodyLabel(textAlignment: .center)
-    let actionButton    = ALButton(backgroundColor: .systemPink, title: "Ok")
+    let containerView       = ALAlertContainerView()
+    let titleLabel          = ALTitleLabel(textAlignment: .center, fontSize: 20)
+    let messageLabel        = ALBodyLabel(textAlignment: .center)
+    let actionButton        = ALButton(backgroundColor: .systemPink, title: "Ok")
     
     var alertTitle: String?
     var message: String?

@@ -8,7 +8,7 @@
 
 import Foundation
 
-// MARK: - Welcome
+// MARK: - RSS
 struct RSS: Codable {
     let feed: Feed
 }
@@ -35,12 +35,12 @@ struct Album: Codable {
          releaseDate: String = "",
          artworkUrl100: String = "",
          genres: [Genre] = []) {
-        self.url = url
-        self.name = name
-        self.copyright = copyright
-        self.artistName = artistName
-        self.releaseDate = releaseDate
-        self.artworkUrl100 = artworkUrl100
+        self.url            = url
+        self.name           = name
+        self.copyright      = copyright
+        self.artistName     = artistName
+        self.releaseDate    = releaseDate
+        self.artworkUrl100  = artworkUrl100
         self.genres = genres
     }
 }
@@ -49,7 +49,7 @@ struct Album: Codable {
 struct Genre: Codable {
     let name: String
     init(name: String = "") {
-        self.name = name
+        self.name           = name
     }
 }
 

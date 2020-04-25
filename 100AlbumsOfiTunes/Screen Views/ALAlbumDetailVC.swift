@@ -11,7 +11,6 @@ import SafariServices
 
 class ALAlbumDetailVC: UIViewController {
     
-//    var album: Album!
     var albumViewModel: AlbumViewModel!
     
     var artistNameLabel                 = ALSecondaryTitleLabel(fontSize: 25)

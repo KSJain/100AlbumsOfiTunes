@@ -9,8 +9,9 @@
 import Foundation
 
 extension String {
+    
     func convertToDate() -> Date? {
-        let dateFormatter = DateFormatter()
+        let dateFormatter           = DateFormatter()
         dateFormatter.dateFormat    = "yyy-MM-dd"
         dateFormatter.locale        = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone      = .current

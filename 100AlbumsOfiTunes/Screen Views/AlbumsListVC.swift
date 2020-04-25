@@ -97,9 +97,12 @@ extension AlbumListVC: UITableViewDelegate {
 extension AlbumListVC {
     
     private func getAlbumData(for country: Country) {
+        showLoadingView()
         NetworkManager.shared.getAlbums(in: country) { [weak self] result in
             guard let self = self else { return }
             
+            self.dismissLoadingView()
+
             switch result  {
             case .failure(let error):
                 self.presentGFAlertOnMainThread(title: "OOPS  🚧",
@@ -131,11 +134,12 @@ extension AlbumListVC {
 
 //MARK:- Search Functionality
 extension AlbumListVC: UISearchResultsUpdating, UISearchBarDelegate {
+    
     func updateSearchResults(for searchController: UISearchController) {
         guard let filter    = searchController.searchBar.text, !filter.isEmpty else { return }
         filteredViewModels  = albumViewModels.filter{ $0.name.lowercased().contains(filter.lowercased()) }
         
-        self.createSnapshot(for: self.filteredViewModels)
+        createSnapshot(for: filteredViewModels)
     }
     
     private func configureSearchController() {

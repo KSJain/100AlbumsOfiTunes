@@ -75,6 +75,7 @@ class NetworkManager{
         
         let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
             guard let self = self else { return }
+            
             if  let _ = error  { return }
             guard let  resp  = response as? HTTPURLResponse,  resp.statusCode ==  200 else { return }
             guard let imageData = data else { return }

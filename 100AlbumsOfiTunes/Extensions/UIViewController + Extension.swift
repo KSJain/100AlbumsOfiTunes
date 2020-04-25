@@ -15,7 +15,7 @@ fileprivate var emptyView: ALEmptyStateView?
 extension UIViewController {
     
     func showLoadingView() {
-        containerView = UIView(frame: view.bounds)
+        containerView                   = UIView(frame: view.bounds)
         view.addSubview(containerView)
         
         containerView.backgroundColor   = .systemBackground
@@ -39,13 +39,13 @@ extension UIViewController {
     func dismissLoadingView() {
         DispatchQueue.main.async {
             containerView.removeFromSuperview()
-            containerView = nil
+            containerView               = nil
         }
     }
     
     func showEmptyStateView(with message: String) {
-        emptyView = ALEmptyStateView(message: message)
-        emptyView?.frame = view.bounds
+        emptyView                       = ALEmptyStateView(message: message)
+        emptyView?.frame                = view.bounds
         view.addSubview(emptyView!)
     }
     
@@ -57,7 +57,9 @@ extension UIViewController {
 // MARK:- Custom Alert
 extension UIViewController {
     func presentGFAlertOnMainThread(title: String, message: String, buttonTitle: String) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.async {[weak self] in
+            guard let self = self else { return }
+            
             let alertVC = ALAlertVC(title: title, message: message, buttonTitle: buttonTitle)
             alertVC.modalPresentationStyle  = .overFullScreen
             alertVC.modalTransitionStyle    = .crossDissolve

@@ -11,11 +11,11 @@ import Foundation
 struct AlbumViewModel: Hashable {
     let url: String
     let name: String
+    let genres: String
     let copyright: String
     let artistName: String
-    let releaseDate: String
     let artworkUrl: String
-    let genres: String
+    let releaseDate: String
     
     init(album: Album = Album()) {
         self.url            = album.url
@@ -32,14 +32,17 @@ struct AlbumViewModel: Hashable {
         // Genre
         var genres          = album.genres
         var genreLableText  = ""
+        
         if genres.count == 0 { genreLableText = "No Genre"}
         if genres.count >= 1 { genreLableText.append(genres.removeFirst().name)}
+        
         while genres.count > 0 {
             let genre       = genres.removeFirst().name
             if genre != "Music" {
                 genreLableText.append("/\(genre)")
             }
         }
+        
         genreLableText.append(" • \(date.convertToYear())")
         self.genres         = genreLableText.uppercased()
     }

@@ -9,14 +9,15 @@
 import Foundation
 
 extension Date {
+    
     func convertToMonthAndYear() -> String {
-        let dateFormatter = DateFormatter()
+        let dateFormatter           = DateFormatter()
         dateFormatter.dateFormat    = "MMM yyyy"
         return dateFormatter.string(from: self)
     }
     
     func convertToYear() -> String {
-        let dateFormatter = DateFormatter()
+        let dateFormatter           = DateFormatter()
         dateFormatter.dateFormat    = "yyyy"
         return dateFormatter.string(from: self)
     }
