@@ -17,7 +17,7 @@ struct AlbumViewModel {
     let artworkUrl: String
     let genres: String
     
-    init(album: Album) {
+    init(album: Album = Album()) {
         self.url            = album.url
         self.name           = album.name
         self.copyright      = album.copyright

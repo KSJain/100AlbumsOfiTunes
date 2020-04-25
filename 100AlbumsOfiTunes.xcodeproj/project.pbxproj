@@ -31,7 +31,22 @@
 		F68D69472453807C0017283F /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D69462453807C0017283F /* Date + Extension.swift */; };
 		F68D6949245381960017283F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6948245381960017283F /* String+Extension.swift */; };
 		F68D694C2454ACCF0017283F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D694B2454ACCF0017283F /* ViewModel.swift */; };
+		F68D69542454B6870017283F /* _00AlbumTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D69532454B6870017283F /* _00AlbumTests.swift */; };
+		F68D695B2454B76E0017283F /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D694B2454ACCF0017283F /* ViewModel.swift */; };
+		F68D695C2454B7730017283F /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D691C244FCB5D0017283F /* Album.swift */; };
+		F68D695D2454B8F90017283F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D6948245381960017283F /* String+Extension.swift */; };
+		F68D695E2454B8FC0017283F /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F68D69462453807C0017283F /* Date + Extension.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F68D69562454B6870017283F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F68D68F2244F780F0017283F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F68D68F9244F780F0017283F;
+			remoteInfo = 100AlbumsOfiTunes;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F68D68FA244F780F0017283F /* Nike Spin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nike Spin.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,10 +75,20 @@
 		F68D69462453807C0017283F /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		F68D6948245381960017283F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F68D694B2454ACCF0017283F /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		F68D69512454B6870017283F /* 100AlbumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 100AlbumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F68D69532454B6870017283F /* _00AlbumTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _00AlbumTests.swift; sourceTree = "<group>"; };
+		F68D69552454B6870017283F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		F68D68F7244F780F0017283F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F68D694E2454B6870017283F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -77,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F68D68FC244F780F0017283F /* 100AlbumsOfiTunes */,
+				F68D69522454B6870017283F /* 100AlbumTests */,
 				F68D68FB244F780F0017283F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -85,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				F68D68FA244F780F0017283F /* Nike Spin.app */,
+				F68D69512454B6870017283F /* 100AlbumTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +260,15 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		F68D69522454B6870017283F /* 100AlbumTests */ = {
+			isa = PBXGroup;
+			children = (
+				F68D69532454B6870017283F /* _00AlbumTests.swift */,
+				F68D69552454B6870017283F /* Info.plist */,
+			);
+			path = 100AlbumTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -253,6 +289,24 @@
 			productReference = F68D68FA244F780F0017283F /* Nike Spin.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F68D69502454B6870017283F /* 100AlbumTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F68D695A2454B6870017283F /* Build configuration list for PBXNativeTarget "100AlbumTests" */;
+			buildPhases = (
+				F68D694D2454B6870017283F /* Sources */,
+				F68D694E2454B6870017283F /* Frameworks */,
+				F68D694F2454B6870017283F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F68D69572454B6870017283F /* PBXTargetDependency */,
+			);
+			name = 100AlbumTests;
+			productName = 100AlbumTests;
+			productReference = F68D69512454B6870017283F /* 100AlbumTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -265,6 +319,10 @@
 				TargetAttributes = {
 					F68D68F9244F780F0017283F = {
 						CreatedOnToolsVersion = 11.4;
+					};
+					F68D69502454B6870017283F = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = F68D68F9244F780F0017283F;
 					};
 				};
 			};
@@ -282,6 +340,7 @@
 			projectRoot = "";
 			targets = (
 				F68D68F9244F780F0017283F /* 100AlbumsOfiTunes */,
+				F68D69502454B6870017283F /* 100AlbumTests */,
 			);
 		};
 /* End PBXProject section */
@@ -293,6 +352,13 @@
 			files = (
 				F68D690A244F78130017283F /* LaunchScreen.storyboard in Resources */,
 				F68D6907244F78130017283F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F68D694F2454B6870017283F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +394,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F68D694D2454B6870017283F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F68D695D2454B8F90017283F /* String+Extension.swift in Sources */,
+				F68D695B2454B76E0017283F /* ViewModel.swift in Sources */,
+				F68D69542454B6870017283F /* _00AlbumTests.swift in Sources */,
+				F68D695E2454B8FC0017283F /* Date + Extension.swift in Sources */,
+				F68D695C2454B7730017283F /* Album.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F68D69572454B6870017283F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F68D68F9244F780F0017283F /* 100AlbumsOfiTunes */;
+			targetProxy = F68D69562454B6870017283F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F68D6908244F78130017283F /* LaunchScreen.storyboard */ = {
@@ -492,6 +578,46 @@
 			};
 			name = Release;
 		};
+		F68D69582454B6870017283F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5G4Y4N938U;
+				INFOPLIST_FILE = 100AlbumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KSJain.-00AlbumTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nike Spin.app/Nike Spin";
+			};
+			name = Debug;
+		};
+		F68D69592454B6870017283F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5G4Y4N938U;
+				INFOPLIST_FILE = 100AlbumTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "KSJain.-00AlbumTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nike Spin.app/Nike Spin";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -509,6 +635,15 @@
 			buildConfigurations = (
 				F68D690F244F78130017283F /* Debug */,
 				F68D6910244F78130017283F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F68D695A2454B6870017283F /* Build configuration list for PBXNativeTarget "100AlbumTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F68D69582454B6870017283F /* Debug */,
+				F68D69592454B6870017283F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
