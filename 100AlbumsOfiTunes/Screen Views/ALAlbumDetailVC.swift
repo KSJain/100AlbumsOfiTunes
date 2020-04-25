@@ -19,7 +19,7 @@ class ALAlbumDetailVC: UIViewController {
     var copyrightInfoLabel              = ALSecondaryTitleLabel(fontSize: 12)
     var albumArtView                    = ALAlbumArtImageView(frame: .zero)
     var albumNameLabel                  = ALTitleLabel(textAlignment: .left, fontSize: 25)
-    var storeButton                     = ALButton(backgroundColor: .systemRed, title: "Buy Album")
+    var musicAppButton                     = ALButton(backgroundColor: .systemRed, title: "Open in Music")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class ALAlbumDetailVC: UIViewController {
         copyrightInfoLabel.text         = albumViewModel.copyright
         
         albumArtView.setImageFor(urlString: albumViewModel.artworkUrl)
-        storeButton.addTarget(self, action: #selector(takeToStore), for: .touchUpInside)
+        musicAppButton.addTarget(self, action: #selector(takeToStore), for: .touchUpInside)
     }
     
     private func configureView() {
@@ -55,7 +55,7 @@ class ALAlbumDetailVC: UIViewController {
          genreLabel,
          releaseDateLabel,
          copyrightInfoLabel,
-         storeButton
+         musicAppButton
             ].forEach {
                 view.addSubview($0)
                 NSLayoutConstraint.activate([
@@ -83,19 +83,26 @@ class ALAlbumDetailVC: UIViewController {
             releaseDateLabel.bottomAnchor.constraint(equalTo: copyrightInfoLabel.topAnchor, constant: -3),
             releaseDateLabel.heightAnchor.constraint(equalToConstant: 15),
             
-            copyrightInfoLabel.bottomAnchor.constraint(equalTo: storeButton.topAnchor, constant: -12),
+            copyrightInfoLabel.bottomAnchor.constraint(equalTo: musicAppButton.topAnchor, constant: -12),
             copyrightInfoLabel.heightAnchor.constraint(equalToConstant: 15),
             
-            storeButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
-            storeButton.heightAnchor.constraint(equalToConstant: 60)
+            musicAppButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding),
+            musicAppButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     
     @objc private func takeToStore() {
-        guard let url   = URL(string: albumViewModel.url) else { return }
-        let safariVC    = SFSafariViewController(url: url)
-        safariVC.preferredControlTintColor = .systemGreen
-        present(safariVC, animated: true)
+        guard let url = URL(string: albumViewModel.url) else { return }
+        
+        let application     = UIApplication.shared
+        
+        if application.canOpenURL(url) {
+            application.open(url, options: [:], completionHandler: nil)
+        } else {
+            let safariVC    = SFSafariViewController(url: url)
+            safariVC.preferredControlTintColor = .systemGreen
+            present(safariVC, animated: true)
+        }
     }
     
     private func setGradient() {
