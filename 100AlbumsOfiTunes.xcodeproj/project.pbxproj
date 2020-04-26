@@ -44,6 +44,8 @@
 		F68D696D245515510017283F /* EmptyScr.PNG in Resources */ = {isa = PBXBuildFile; fileRef = F68D696A245515510017283F /* EmptyScr.PNG */; };
 		F68D696E245515510017283F /* MusicApp.png in Resources */ = {isa = PBXBuildFile; fileRef = F68D696B245515510017283F /* MusicApp.png */; };
 		F68D696F245515510017283F /* Spin.GIF in Resources */ = {isa = PBXBuildFile; fileRef = F68D696C245515510017283F /* Spin.GIF */; };
+		F68D697224551A020017283F /* Scr2.png in Resources */ = {isa = PBXBuildFile; fileRef = F68D697024551A020017283F /* Scr2.png */; };
+		F68D697324551A020017283F /* Scr1.png in Resources */ = {isa = PBXBuildFile; fileRef = F68D697124551A020017283F /* Scr1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		F68D696A245515510017283F /* EmptyScr.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmptyScr.PNG; sourceTree = "<group>"; };
 		F68D696B245515510017283F /* MusicApp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MusicApp.png; sourceTree = "<group>"; };
 		F68D696C245515510017283F /* Spin.GIF */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Spin.GIF; sourceTree = "<group>"; };
+		F68D697024551A020017283F /* Scr2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scr2.png; sourceTree = "<group>"; };
+		F68D697124551A020017283F /* Scr1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Scr1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +300,8 @@
 				F68D6968245515340017283F /* Alert.PNG */,
 				F68D6962245513AA0017283F /* ListView.jpeg */,
 				F68D6964245513BA0017283F /* Search.jpeg */,
+				F68D697124551A020017283F /* Scr1.png */,
+				F68D697024551A020017283F /* Scr2.png */,
 				F68D6966245513C60017283F /* AlbumDetailView.jpeg */,
 			);
 			path = "Images for GitHub";
@@ -382,11 +388,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68D697324551A020017283F /* Scr1.png in Resources */,
 				F68D696F245515510017283F /* Spin.GIF in Resources */,
 				F68D696E245515510017283F /* MusicApp.png in Resources */,
 				F68D6969245515340017283F /* Alert.PNG in Resources */,
 				F68D6963245513AA0017283F /* ListView.jpeg in Resources */,
 				F68D69612455138C0017283F /* LoadingSpinner.jpeg in Resources */,
+				F68D697224551A020017283F /* Scr2.png in Resources */,
 				F68D690A244F78130017283F /* LaunchScreen.storyboard in Resources */,
 				F68D6965245513BA0017283F /* Search.jpeg in Resources */,
 				F68D6967245513C60017283F /* AlbumDetailView.jpeg in Resources */,
