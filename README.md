@@ -54,19 +54,19 @@ The app was  developed using a simulation of multi iteration *Scrum development*
 <img src="100AlbumsOfiTunes/Images%20for%20GitHub/ListView.jpeg" width="200">
 
 ### Screen B - Loading Screen
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/LoadingSpinner.jpeg" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/LoadingSpinner.jpeg" width="400">
 
 ### Screen C - Album Details Card
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/AlbumDetailView.jpeg" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/AlbumDetailView.jpeg" width="400">
 
 ### Screen D - Apple Music App
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/MusicApp.png" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/MusicApp.png" width="400">
 
 ### Screen E - Empty Album List
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/EmptyScr.PNG" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/EmptyScr.PNG" width="400">
 
 ### Screen F - Custom Alert
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/Alert.PNG" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/Alert.PNG" width="400">
 
 ### Screen G - Mock List
 <img src="100AlbumsOfiTunes/Images%20for%20GitHub/Scr1.png" width="500">
