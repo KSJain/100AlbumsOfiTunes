@@ -2,7 +2,7 @@
 
 This file explains the Nike Spin app and how it  works
 
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/Spin.GIF" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/Spin.GIF" width="400">
 
 ## As  per the instructions in the K-Force Task. The app has following key qualities
 * It uses Auto Layout - Adaptable to screen sizes on iPhone 11 to iPhone SE in Portrait mode
@@ -51,7 +51,7 @@ The app was  developed using a simulation of multi iteration *Scrum development*
 
 ## Image For Reference
 ### Screen A - Album List
-<img src="100AlbumsOfiTunes/Images%20for%20GitHub/ListView.jpeg" width="200">
+<img src="100AlbumsOfiTunes/Images%20for%20GitHub/ListView.jpeg" width="400">
 
 ### Screen B - Loading Screen
 <img src="100AlbumsOfiTunes/Images%20for%20GitHub/LoadingSpinner.jpeg" width="400">
