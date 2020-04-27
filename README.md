@@ -6,9 +6,9 @@ This file explains the Nike Spin app and how it  works
 
 ## As  per the instructions in the K-Force Task. The app has following key qualities
 * It uses Auto Layout - Adaptable to screen sizes on iPhone 11 to iPhone SE in Portrait mode
-* It uses proper threading - fetching album art and Album data in background
+* It uses proper threading - fetching album art and Album data in background, dealing with UI on main
 * Displays good architecture around parsing the API response into model objects to populate UI - using MVVM - unit testable with happy path and edge and corner cases.
-* Uses modern Swift Patterns - Diffable Data for example
+* Uses modern Swift Patterns - Diffable Data and empty data screen for example
 
 ## As per instructions. The App does NOT
 * use story board or nib
@@ -42,7 +42,7 @@ This file explains the Nike Spin app and how it  works
 * UI developed in *UI Layout style of apple store* and music app and follows *Apples Human Interface Guidelines*
 
 ## Development Style
-The app was  developed using a simulation of multi iteration *Scrum development*, with Features split into stories, with unit testing.
+The app was developed using a simulation of multi iteration *Agile development*, with Features split into stories, with unit testin.
 
 * Design Mocks were based on user requirememnts (Screen G and H)
 * Architecture was made around API response - Data Modeling - Parsing response into model - Finally using model with MVVM to show info in UI
