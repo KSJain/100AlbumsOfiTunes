@@ -4,7 +4,7 @@ This file explains the Nike Spin app and how it  works
 
 <img src="100AlbumsOfiTunes/Images%20for%20GitHub/Spin.GIF" width="400">
 
-## As  per the instructions in the K-Force Task. The app has following key qualities
+## As  per the instructions in the task. The app has following key qualities
 * It uses Auto Layout - Adaptable to screen sizes on iPhone 11 to iPhone SE in Portrait mode
 * It uses proper threading - fetching album art and Album data in background, dealing with UI on main
 * Displays good architecture around parsing the API response into model objects to populate UI - using MVVM - unit testable with happy path and edge and corner cases.
